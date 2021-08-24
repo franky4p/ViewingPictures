@@ -8,10 +8,8 @@
 import Foundation
 import Unrealm
 
-
 final class Session {
-    var token: String?
-    var userId: Int?
+    var currentPage: Int = 0
     let session =  URLSession(configuration: URLSessionConfiguration.default)
     
     static let shared = Session()
@@ -30,8 +28,6 @@ final class Session {
             }
             
             do {
-//                                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableLeaves)
-//                                                       print(json)
                 let results = try JSONDecoder().decode(T.self, from: data)
                 
                 DispatchQueue.main.async {
@@ -56,32 +52,16 @@ final class Session {
         task.resume()
     }
     
-//    func getDateFromServer<T>(typeDate: T.Type, request: URLRequest) where T:Decodable, T:Realmable {
-//        Session.shared.requestToAPI(url: request, typeReceiver: Root<T>.self) { results in
-//            var data: [T] = [T]()
-//            switch results {
-//            case .success(let response):
-//                response.fotos.forEach {
-//                    data.append($0)
-//                }
-//
-//                Keeper.saveData(data)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
     func updateFromServer() {
         let opq = OperationQueue()
         let requestFotoFish = RequestApi.requestPhotoFish()
         
-        let opFriend = GetDataOperation(request: requestFotoFish, typeDate: Photos.self)
-        opFriend.completionBlock = {
-            Keeper.saveData(opFriend.data)
+        let opFotoFish = GetDataOperation(request: requestFotoFish, typeDate: Photos.self)
+        opFotoFish.completionBlock = {
+            Keeper.saveData(opFotoFish.data)
         }
         
-        opq.addOperation(opFriend)
+        opq.addOperation(opFotoFish)
     }
 }
 
@@ -95,7 +75,10 @@ final class RequestApi {
         urlComponents.host = hostAPI
         urlComponents.path = "/v1/search"
         urlComponents.queryItems = [
-            URLQueryItem(name: "query", value: "fish")
+            URLQueryItem(name: "query", value: "Ocean fish"),
+            URLQueryItem(name: "per_page", value: "40"),
+            URLQueryItem(name: "size", value: "small"),
+            URLQueryItem(name: "page", value: "\(Session.shared.currentPage + 1)")
         ]
         
         var request = URLRequest(url: urlComponents.url!)

@@ -26,6 +26,7 @@
 		FAF9676826D4F00200B177F1 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9676726D4F00200B177F1 /* UIView+.swift */; };
 		FAF9676A26D4F01400B177F1 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9676926D4F01400B177F1 /* UIImageView+.swift */; };
 		FAF9676C26D4F02500B177F1 /* FactoryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9676B26D4F02500B177F1 /* FactoryUI.swift */; };
+		FAF9676E26D522C200B177F1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9676D26D522C200B177F1 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FAF9676726D4F00200B177F1 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		FAF9676926D4F01400B177F1 /* UIImageView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		FAF9676B26D4F02500B177F1 /* FactoryUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryUI.swift; sourceTree = "<group>"; };
+		FAF9676D26D522C200B177F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,7 @@
 			children = (
 				FAF9674A26D4E64800B177F1 /* TableViewController.swift */,
 				FAF9676426D4EF0600B177F1 /* TableViewCell.swift */,
-				FAF9674126D4E4AE00B177F1 /* LaunchScreen.storyboard */,
+				FAF9676D26D522C200B177F1 /* PhotoViewController.swift */,
 				FAF9673C26D4E4AD00B177F1 /* Main.storyboard */,
 			);
 			path = UI;
@@ -107,6 +109,7 @@
 		FAF9674D26D4E80D00B177F1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAF9674126D4E4AE00B177F1 /* LaunchScreen.storyboard */,
 				FAF9673F26D4E4AE00B177F1 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -243,6 +246,7 @@
 				FAF9675326D4E86800B177F1 /* AsyncOperation.swift in Sources */,
 				FAF9676326D4EBF700B177F1 /* Photo.swift in Sources */,
 				FAF9674B26D4E64800B177F1 /* TableViewController.swift in Sources */,
+				FAF9676E26D522C200B177F1 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

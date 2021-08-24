@@ -17,6 +17,7 @@ class GetDataOperation <T> : AsyncOperation where T:Decodable {
             
             switch results {
             case .success(let response):
+                Session.shared.currentPage = response.page ?? 0
                 response.photos.forEach {
                     self.data.append($0)
                 }

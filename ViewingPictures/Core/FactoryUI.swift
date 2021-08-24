@@ -17,10 +17,9 @@ final class FactoryUI {
     }
     
     static func createAvatarImageView() -> UIImageView {
-        let imgView = UIImageView(image: UIImage(named: "icons8-socrates-50"))
-        imgView.contentMode = .scaleAspectFit
+        let imgView = UIImageView(image: UIImage(named: "icons8-socrates-100"))
+        imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
-        //imgView.layer.cornerRadius = 20
         imgView.autoresizesSubviews = true
         return imgView
     }
